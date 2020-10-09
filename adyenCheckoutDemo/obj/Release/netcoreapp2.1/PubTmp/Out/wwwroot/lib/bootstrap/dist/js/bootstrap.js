@@ -338,7 +338,8 @@ if (typeof jQuery === 'undefined') {
     interval: 5000,
     pause: 'hover',
     wrap: true,
-    keyboard: true
+      keyboard: true
+
   }
 
   Carousel.prototype.keydown = function (e) {

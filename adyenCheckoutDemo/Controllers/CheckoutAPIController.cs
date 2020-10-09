@@ -85,8 +85,8 @@ namespace adyenCheckoutDemo.Controllers
                 BrowserInfo browserInfoObj       = JsonConvert.DeserializeObject<BrowserInfo>(JsonConvert.SerializeObject(pmObject["browserInfo"]));
                 BillingAddress billingAddressObj = JsonConvert.DeserializeObject<BillingAddress>(JsonConvert.SerializeObject(pmObject["billingAddress"]));
                 var channel                      = "Web";
-                var origin                       = "http://localhost:5000";
-                var returnUrl                    = "http://localhost:5000/Home/ShowResult?orderReference=" + orderReference;
+                var origin                       = "https://adyencheckoutdemo.azurewebsites.net";
+                var returnUrl                    = "https://adyencheckoutdemo.azurewebsites.net/Home/ShowResult?orderReference=" + orderReference;
 
                 var paymentCardDetailsObj = new PaymentCardDetaiils
                 {
@@ -118,7 +118,7 @@ namespace adyenCheckoutDemo.Controllers
             else
             {
                 var orderReference = "naman_checkoutChallenge";
-                var returnUrl      = "http://localhost:5000/Home/ShowResult?orderReference=" + orderReference;  
+                var returnUrl      = "https://adyencheckoutdemo.azurewebsites.net/Home/ShowResult?orderReference=" + orderReference;  
                 
                 var paymentCardDetailsObj = new LocalPaymentCardDetails
                 {

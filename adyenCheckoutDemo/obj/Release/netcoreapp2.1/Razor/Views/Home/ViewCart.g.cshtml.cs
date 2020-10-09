@@ -85,7 +85,7 @@ using adyenCheckoutDemo.Models;
 													");
             EndContext();
             BeginContext(578, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "516e2f829ec84642a0c8ac97517f773b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "0844a3e9688542089703574098532f23", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -126,7 +126,7 @@ using adyenCheckoutDemo.Models;
 													");
             EndContext();
             BeginContext(1300, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "eeee86c967464c5fbeec5ae134c90517", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "667207e018f54bae8a481c28e857008f", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -167,7 +167,7 @@ using adyenCheckoutDemo.Models;
 													");
             EndContext();
             BeginContext(2026, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "59689b0bfa184d9c8bae0f0c6115f5fb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4f3142a9328f4a5fadfb50d00430c021", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -218,7 +218,7 @@ using adyenCheckoutDemo.Models;
             WriteLiteral("te Cart</a>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6\">\r\n\t\t\t\t\t\t\t\t<div class=\"shoping__continue\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"shoping__discount\">\r\n\t\t\t\t\t\t\t\t\t\t<h5>Discount Codes</h5>\r\n\t\t\t\t\t\t\t\t\t\t");
             EndContext();
             BeginContext(3293, 164, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2dcb357c00d4ac4b0457025ff80c8c8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba2d5ade5d4f42528e860c2cf3f9131a", async() => {
                 BeginContext(3310, 140, true);
                 WriteLiteral("\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Enter your coupon code\">\r\n\t\t\t\t\t\t\t\t\t\t\t<button class=\"site-btn\">APPLY COUPON</button>\r\n\t\t\t\t\t\t\t\t\t\t");
                 EndContext();
