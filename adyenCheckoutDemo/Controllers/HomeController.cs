@@ -40,7 +40,7 @@ namespace adyenCheckoutDemo.Controllers
 
                 AdditionalDetails additionalDetailsReqObj = new AdditionalDetails
                 {
-                    details = details,
+                    details     = details,
                     paymentData = orderReference
                 };
 

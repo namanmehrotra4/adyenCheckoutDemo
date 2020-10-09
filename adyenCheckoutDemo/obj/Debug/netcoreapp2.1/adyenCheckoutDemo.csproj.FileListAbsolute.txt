@@ -31,3 +31,4 @@ C:\Users\naman\source\repos\adyenCheckoutDemo\adyenCheckoutDemo\obj\Debug\netcor
 C:\Users\naman\source\repos\adyenCheckoutDemo\adyenCheckoutDemo\obj\Debug\netcoreapp2.1\adyenCheckoutDemo.csproj.CopyComplete
 C:\Users\naman\source\repos\adyenCheckoutDemo\adyenCheckoutDemo\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowResult.g.cshtml.cs
 C:\Users\naman\source\repos\adyenCheckoutDemo\adyenCheckoutDemo\obj\Debug\netcoreapp2.1\adyenCheckoutDemo.csprojAssemblyReference.cache
+C:\Users\naman\source\repos\adyenCheckoutDemo\adyenCheckoutDemo\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

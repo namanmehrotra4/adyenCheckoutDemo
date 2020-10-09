@@ -51,10 +51,12 @@ namespace adyenCheckoutDemo.Controllers
 
         //Function to call Payments API
         [HttpPost]
-        public async Task<dynamic> MakePayment([FromBody] Dictionary<string, object> pmObject)
+        public async Task<dynamic> MakePayment([FromBody] Dictionary<string, object> data)
         {
-            var data =  (Newtonsoft.Json.Linq.JObject) pmObject["data"];
-            var amount = (Newtonsoft.Json.Linq.JObject)pmObject["amount"];
+            try
+            {
+                var pmObject =  (Newtonsoft.Json.Linq.JObject) data["data"];
+                var amount   = (Newtonsoft.Json.Linq.JObject) data["amount"];
 
             var amountObj = new Amount
             {
@@ -62,13 +64,14 @@ namespace adyenCheckoutDemo.Controllers
                 currency = amount.GetValue("_currency").ToString(),
                 value    = (long)amount.GetValue("_amount"),
             };
-            var paymentMethodToken = (Newtonsoft.Json.Linq.JObject)data.GetValue("paymentMethod");
+            var paymentMethodToken = (Newtonsoft.Json.Linq.JObject)pmObject.GetValue("paymentMethod");
             var pmType             = paymentMethodToken.GetValue("type").ToString();
 
-            Payment paymentReqObj  = new Payment();
+            Payment paymentReqObj           = new Payment();
+            LocalPayment localPaymentReqObj = new LocalPayment();
 
-            //For Card Payment case
-            if (pmType == "scheme")
+                //For Card Payment case
+                if (pmType == "scheme")
             {
                 var pmCardNumber   = paymentMethodToken.GetValue("encryptedCardNumber").ToString();
                 var pmMonth        = paymentMethodToken.GetValue("encryptedExpiryMonth").ToString();
@@ -117,14 +120,13 @@ namespace adyenCheckoutDemo.Controllers
                 var orderReference = "naman_checkoutChallenge";
                 var returnUrl      = "http://localhost:5000/Home/ShowResult?orderReference=" + orderReference;  
                 
-                var paymentCardDetailsObj = new PaymentCardDetaiils
+                var paymentCardDetailsObj = new LocalPaymentCardDetails
                 {
                     type = pmType
-
                 };
 
-                //Request object for payments API call
-                paymentReqObj = new Payment
+               //Request object for payments API call
+                localPaymentReqObj = new LocalPayment
                 {
                     merchantAccount = "AdyenRecruitmentCOM",
                     reference       = orderReference,
@@ -144,15 +146,27 @@ namespace adyenCheckoutDemo.Controllers
                 new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("x-api-key", xapiKey);
 
-            try
-            {
-                var requestObjValue =  JsonConvert.SerializeObject(paymentReqObj);
-                //Calling payments API
-                HttpResponseMessage response = await client.PostAsJsonAsync(APIURL, paymentReqObj);
-                var detailJson               = await response.Content.ReadAsStringAsync();
-                dynamic paymentResultJsonObj = JsonConvert.DeserializeObject<dynamic>(detailJson);
+                if (pmType == "scheme")
+                {
 
-                return paymentResultJsonObj;
+                    var requestObjValue = JsonConvert.SerializeObject(paymentReqObj);
+                    //Calling payments API
+                    HttpResponseMessage response = await client.PostAsJsonAsync(APIURL, paymentReqObj);
+                    var detailJson               = await response.Content.ReadAsStringAsync();
+                    dynamic paymentResultJsonObj = JsonConvert.DeserializeObject<dynamic>(detailJson);
+
+                    return paymentResultJsonObj;
+                }
+                else
+                {
+                    var requestObjValue = JsonConvert.SerializeObject(localPaymentReqObj);
+                    //Calling payments API
+                    HttpResponseMessage response = await client.PostAsJsonAsync(APIURL, localPaymentReqObj);
+                    var detailJson               = await response.Content.ReadAsStringAsync();
+                    dynamic paymentResultJsonObj = JsonConvert.DeserializeObject<dynamic>(detailJson);
+
+                    return paymentResultJsonObj;
+                }
 
             }
             catch (Exception e)

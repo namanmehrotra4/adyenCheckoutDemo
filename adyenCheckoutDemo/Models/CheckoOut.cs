@@ -42,6 +42,21 @@ namespace adyenCheckoutDemo.Models
         public string holderName;
         public string encryptedSecurityCode;
     }
+
+    public class LocalPayment
+    {
+        public string merchantAccount;
+        public string reference;
+        public string returnUrl;
+        public Amount amount;
+        public LocalPaymentCardDetails paymentMethod;
+    }
+    public class LocalPaymentCardDetails
+    {
+        public string type;
+
+    }
+
     public class BrowserInfo
     {
         public string userAgent = @"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/70.0.3538.110 Safari\/537.36";
