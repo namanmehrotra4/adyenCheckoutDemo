@@ -20,7 +20,7 @@ namespace adyenCheckoutDemo.Controllers
             return View();
         }
 
-       
+       //Function to capture payment status and generate pspreference once redirected back from 3rd party site
         [HttpGet]
         public ActionResult ShowResult(string orderReference, string payload, string resultCode, string dispaceResult, string refusalreason, string merchantReference)
         {
@@ -54,8 +54,7 @@ namespace adyenCheckoutDemo.Controllers
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Add("x-api-key", xapiKey);
 
-                var requestObjValue = JsonConvert.SerializeObject(additionalDetailsReqObj);
-
+                var requestObjValue                   = JsonConvert.SerializeObject(additionalDetailsReqObj);
                 var postResponse                      = client.PostAsJsonAsync(APIURL, additionalDetailsReqObj).Result.Content;
                 var detailJson                        = postResponse.ReadAsStringAsync().Result;
                 dynamic addtionalDetailsResultJsonObj = JsonConvert.DeserializeObject<dynamic>(detailJson);
