@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Adyen - Checkout Demo - Naman Mehrotra</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet"
+          href="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/3.11.4/adyen.css"
+          integrity="sha384-gTrHdtmLDTaHuDUKM1okZAVgBTwjiI+E66Tz3K71+10Lhd7zxvtUF5lrHc35cNIR"
+          crossorigin="anonymous">
+ 
+	<link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/style.css" type="text/css">
+</head>
+<body>
+
+   <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> namanmehrotra2@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__language">
+                                <img src="~/img/sg.svg" alt="" style="width:27px">
+                                <div>Singapore</div>
+                                <ul>
+                                    <li><a href="#">Singapore</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <h1> Adyen</h1> 
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li>
+								@Html.ActionLink("Checkout", "ViewCart", "Home")</a>
+							</li>
+                            <li><a href="#">Track My Order</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <div class="header__cart__price"><span>Free Delivery</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+				<section class="hero hero-normal">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-3">
+								<div class="hero__categories">
+									<div class="hero__categories__all">
+										<span>All departments</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-9">
+								<div class="hero__search">
+									<div class="hero__search__form">
+										<form action="#">
+											<div class="hero__search__categories">
+												All Categories
+											</div>
+											<input type="text" placeholder="What do yo u need?">
+											<button class="site-btn">SEARCH</button>
+										</form>
+									</div>
+									<div class="hero__search__phone">
+										<div class="hero__search__phone__icon">
+											<i class="fa fa-phone"></i>
+										</div>
+										<div class="hero__search__phone__text">
+											<h5>+65 8403089</h5>
+											<span>support 24/7 time</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				 <main role="main" class="pb-3">
+					@RenderBody()
+				</main>
+
+				<footer class="footer spad" style="height:5px">
+					
+				</footer>
+
+    @RenderSection("scripts", required: false)
+	
+	<script src="~/js/theme/jquery-3.3.1.min.js"></script>
+    <script src="~/js/theme/bootstrap.min.js"></script>
+    <script src="~/js/theme/jquery.nice-select.min.js"></script>
+    <script src="~/js/theme/jquery-ui.min.js"></script>
+    <script src="~/js/theme/jquery.slicknav.js"></script>
+    <script src="~/js/theme/mixitup.min.js"></script>
+    <script src="~/js/theme/owl.carousel.min.js"></script>
+    <script src="~/js/theme/main.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "PaymentMethods";
+
+}
+
+<section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <h4>Select Payment Method</h4>
+                <div class="row">
+					<div class="col-lg-8 col-md-6">
+						<div id="dropin-container"></div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4>Your Order</h4>
+                                <div class="checkout__order__products">Products <span>Total</span></div>
+                                <ul>
+                                    <li>Vegetable’s Package <span>$15.00</span></li>
+                                    <li>Fresh Vegetable <span>$15.00</span></li>
+                                    <li>Organic Bananas <span>$5.00</span></li>
+                                </ul>
+                                <div class="checkout__order__subtotal">Subtotal <span>$35.00</span></div>
+                                <div class="checkout__order__total">Total <span>$35.00</span></div>
+                                
+                            </div>
+                        </div>
+				</div>
+            </div>
+        </div>
+    </section>
+
+
+@section scripts{
+	<script src="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/3.11.4/adyen.js"
+				integrity="sha384-r6VzatKWD1SDwT5pfnl6sfkNJYAsTAUlUOO6PEbIhMwWFkPrE28R/8cjAKBp9yCd"
+				crossorigin="anonymous"></script>
+
+	<script src="~/js/checkoutjquery.js" asp-append-version="true">	
+	</script>
+	<script>
+        var payload = @Html.Raw(@ViewBag.payload);
+        var callback = function () {
+			SetupDropin(payload);
+		};
+
+		if (document.readyState === "complete" ||
+		(document.readyState !== "loading" && !document.documentElement.doScroll)) 
+		{
+		  callback();
+		} else {
+		  document.addEventListener("DOMContentLoaded", callback);
+		}
+	</script>
+}
